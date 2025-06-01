@@ -1,155 +1,124 @@
 # LIDAR Horror Game
 
-A first-person horror game where players navigate through a forest of steel poles using a LIDAR scanner to detect their surroundings and avoid a pursuing monster. Your goal is to find your way to your ship at the edge of the steel forest.
+A first-person horror game where you navigate through a dense forest of steel poles using a LIDAR scanner to visualize your surroundings. Your goal is to find your ship at the edge of the steel forest while avoiding a mysterious monster that lurks in the darkness.
 
-## 🎮 Game Features
+## Features
 
 ### First-Person Perspective
-- Mouse-controlled camera movement with smooth rotation
-- Immersive gameplay from the player's viewpoint
-- Movement relative to camera direction
-- Pointer lock for better control
+- Immersive 3D environment built with Three.js
+- Mouse-controlled camera movement with pointer lock
+- Smooth movement controls using WASD keys
+- Body cam-style visual filter with noise and vignette effects
 
 ### LIDAR Scanning System
-- Press SPACE to initiate a 360-degree scan
+- Real-time 3D scanning visualization
 - 5-second cooldown between scans
 - Color-coded scanning results:
-  - Green lines: Steel poles
-  - Red lines: Monster
-  - Cyan lines: Walls
-  - Yellow lines: Escape ship
-- Visual feedback for scan progress and cooldown
-- Scanning takes 2 seconds to complete
+  - Green: Steel poles
+  - Cyan: Walls and structures
+  - Red: Monster
+  - Yellow: Ship
+- Distance-based opacity for scan lines
+- Persistent scan history that fades over time
 
 ### Dynamic Monster AI
 - Monster spawns after 60 seconds of player movement
-- Pursues player at a slower speed
-- Visible through LIDAR scanner with distinct red signature
-- Can navigate around walls and obstacles
-- Intelligent pathfinding to reach the player
+- Navigates around walls and obstacles
+- Appears as red in LIDAR scans
+- Continuously pursues the player
 
 ### Complex Environment
-- Dense forest of thick steel poles (100+ poles)
-- Maze-like walls and structures (20+ walls)
-- Larger play area for exploration (2x canvas size)
-- Collision detection with walls and obstacles
-- Procedurally generated layout
+- Dense forest of 100+ steel poles
+- 20+ walls creating maze-like structures
+- Realistic 3D collision detection
+- Dynamic lighting and shadows
 
 ### Escape Objective
 - Find your ship at the edge of the steel forest
-- Ship visible through LIDAR scanner with yellow signature
 - Victory screen upon reaching the ship
-- Ship spawns at a random edge location
+- Increasing tension as the monster spawns
 
-## 🎯 Controls
+## Controls
+- WASD: Move
+- Mouse: Look around
+- Click: Lock mouse pointer
+- Space: Activate LIDAR scan
+- ESC: Release mouse pointer
 
-### Movement
-- **Mouse**: Look around
-- **W**: Move forward
-- **S**: Move backward
-- **A**: Move left
-- **D**: Move right
+## Technical Implementation
 
-### Actions
-- **SPACE**: Activate LIDAR scanner
-- **Click**: Lock mouse pointer for better control
+### 3D Rendering
+- Built with Three.js for high-performance 3D graphics
+- Custom shaders for visual effects
+- Efficient collision detection using raycasting
+- Dynamic lighting system
 
-## 🛠️ Technical Implementation
+### LIDAR System
+- Raycasting-based scanning mechanism
+- Distance-based opacity calculations
+- Persistent scan history with time-based decay
+- Color-coded object detection
 
-### Core Systems
-- Built with vanilla JavaScript and HTML5 Canvas
-- Real-time LIDAR visualization using ray casting
-- Smooth player movement with vector-based controls
-- Delta time-based game loop for consistent performance
+### Visual Effects
+- Body cam-style filter with:
+  - Dynamic noise effect
+  - Vignette darkening
+  - Subtle color grading
+- Realistic 3D models and materials
+- Dynamic shadows and lighting
 
-### Advanced Features
-- Efficient collision detection and object scanning
-- Pointer lock API for better mouse control
-- Cooldown system for scanning mechanics
-- Ray casting for LIDAR visualization
-- Collision detection for walls and obstacles
+## Development History
 
-## 📝 Development History
+### Version 1.2.0 (Current)
+- Implemented 3D environment using Three.js
+- Added body cam-style visual filter
+- Enhanced LIDAR visualization in 3D space
+- Improved monster AI with 3D pathfinding
+- Added dynamic lighting and shadows
 
-### Version 1.1.0 (Current)
-- Added mouse-controlled camera
-- Implemented scanning cooldown system
-- Added walls and complex environment
-- Introduced escape ship objective
-- Added collision detection
-- Improved monster AI with wall avoidance
-- Enhanced LIDAR visualization with color coding
-- Added victory condition
+### Version 1.1.0
+- Added mouse controls for camera movement
+- Implemented scanning cooldown
+- Created more complex environment with walls
+- Added escape objective with ship
+- Enhanced monster AI
 
-### Version 1.0.0 (Initial Release)
-- Basic game structure and mechanics
-- First-person perspective implementation
+### Version 1.0.0
+- Initial release
+- Basic first-person movement
 - LIDAR scanning system
-- Monster AI and delayed spawn
-- Steel pole forest generation
+- Monster AI
+- Simple environment
 
-### Future Improvements
+## Future Improvements
 - [ ] Add sound effects and ambient audio
-- [ ] Implement game over conditions
-- [ ] Add difficulty levels
-- [ ] Include more environmental hazards
-- [ ] Add a scoring system
-- [ ] Add multiple levels
-- [ ] Implement save/load system
-- [ ] Add particle effects for scanning
-- [ ] Implement fog of war
+- [ ] Implement more complex monster behaviors
 - [ ] Add power-ups and collectibles
+- [ ] Create multiple levels with increasing difficulty
+- [ ] Add particle effects for environmental atmosphere
+- [ ] Implement more advanced visual effects
+- [ ] Add multiplayer support
+- [ ] Create a level editor
 
-## 🚀 How to Run
-
+## How to Run
 1. Clone the repository
 2. Open `index.html` in a modern web browser
-3. Click to lock mouse pointer
-4. Use WASD to move and SPACE to scan
-5. Find your way to the ship while avoiding the monster
+3. Click to start and lock the mouse pointer
+4. Use WASD to move and mouse to look around
+5. Press Space to activate the LIDAR scanner
+6. Find the ship to win!
 
-## 🎨 Visual Style
+## Dependencies
+- Three.js for 3D rendering
+- Custom shaders for visual effects
 
-### Environment
-- Dark, atmospheric environment
-- Minimalist design focusing on LIDAR visualization
-- Clear visual feedback for player actions
+## Contributing
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-### LIDAR Visualization
-- Distinct color coding for different detected objects:
-  - Green: Steel poles
-  - Red: Monster
-  - Cyan: Walls
-  - Yellow: Escape ship
-- Cooldown indicator for scanning
-- Scan progress visualization
-- Victory screen upon completion
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 🎮 Gameplay Tips
-
-1. Use the LIDAR scanner strategically due to the cooldown
-2. Remember the color coding for different objects
-3. Keep track of the monster's position using red LIDAR lines
-4. Look for the yellow ship signature in your scans
-5. Use walls to your advantage when avoiding the monster
-6. Plan your route before moving to conserve scan uses
-
-## 🤝 Contributing
-
-Feel free to fork this project and submit pull requests for any improvements. All contributions are welcome!
-
-### How to Contribute
-1. Fork the repository
-2. Create a new branch for your feature
-3. Make your changes
-4. Submit a pull request
-
-## 📄 License
-
-This project is open source and available under the MIT License.
-
-## 🙏 Acknowledgments
-
-- Inspired by classic horror games
-- Built with HTML5 Canvas and JavaScript
-- Special thanks to the open-source community 
+## Acknowledgments
+- Three.js community for 3D rendering capabilities
+- Inspiration from classic horror games
+- Body cam footage for visual style reference 
